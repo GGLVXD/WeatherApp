@@ -13,20 +13,19 @@
 
     <!-- CSS -->
 
+    <!-- global stuff -->
+    <link rel="stylesheet" href="src/css/global.css">
     <!-- header -->
     <link rel="stylesheet" href="src/css/header.css">
 </head>
 <body>
     <header class="header">
-        <div class="container">
-          <div class="row align-items-start">
-            <div class="col">
-            <p>VTDT Sky</p>
-            </div>
-            <div class="col">
-
+        <div class="header-container">
+            <div class="logo-container"> 
+                <div class="logo-text-box">
+                    <h1 class="logo-text">VTDT Sky</h1>
+                </div>
             </div>
         </div>
-
     </header>
 </body>

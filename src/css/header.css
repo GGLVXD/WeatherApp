@@ -1,1 +1,35 @@
 /* HEADER */
+
+/* header */
+.header {
+    height: 13%; /* pixel perfect from original */
+}
+
+/* header div */
+.header-container {
+    display: flex;
+    background-color: #FFFFFF;
+    height: 100%;
+}
+
+
+/* hamburger, logo, city stuff */
+.logo-container {
+    display: flex;
+    width: 30%;
+    align-items: center;
+    background-color: green;
+    height: 100%;
+}
+
+.logo-text-box {
+    width: 100%;
+    margin-left: 5%;
+}
+
+/* logo text (VTDT Sky) */
+.logo-text {
+    margin-top: 0;
+    color: #3B82F6;
+    font-size: 24px;
+}
