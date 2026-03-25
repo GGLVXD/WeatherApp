@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>React App</title>
+    <title>React App1</title>
 
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <!-- font awesome for icons -->
@@ -19,11 +19,22 @@
     <link rel="stylesheet" href="src/css/header.css">
 </head>
 <body>
+    <!-- header -->
     <header class="header">
-        <div class="header-container">
+        <!-- header container -->
+        <div class="header-container shadow p-3 mb-5 bg-white rounded">
+            <!-- logo, city stuff -->
             <div class="logo-container"> 
+                <!-- logo div -->
                 <div class="logo-text-box">
-                    <h1 class="logo-text">VTDT Sky</h1>
+                    <!-- hamburger -->
+                    <div class="logo-hamburger">
+                        <button class="hamburger">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <!-- logo text -->
+                        <h1 class="logo-text">VTDT Sky</h1>
+                    </div>
                 </div>
             </div>
         </div>

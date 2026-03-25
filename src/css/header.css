@@ -7,6 +7,8 @@
 
 /* header div */
 .header-container {
+    margin-left: 3%; /* spacing from screen to container */
+    margin-right: 3%;
     display: flex;
     background-color: #FFFFFF;
     height: 100%;
@@ -16,9 +18,8 @@
 /* hamburger, logo, city stuff */
 .logo-container {
     display: flex;
-    width: 30%;
+    width: 40%; /* size of logo and city stuff */
     align-items: center;
-    background-color: green;
     height: 100%;
 }
 
@@ -33,3 +34,21 @@
     color: #3B82F6;
     font-size: 24px;
 }
+
+/* logo + hamburger */
+.logo-hamburger{
+    display: flex;
+    width: 50%; /* seprate the logo from citty */
+    gap: 15px; /* space from logo to hamburger */
+
+}
+
+/* hamburger button */
+.hamburger {
+    border: none;
+    background-color: #FFFFFF;
+    font-size: 20px;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
