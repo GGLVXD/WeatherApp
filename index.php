@@ -1,3 +1,13 @@
+<?php
+include 'src/php/data.php';
+include 'src/php/country.php';
+function countryCodeToName($countrycode, $countryarray) {
+  return $countryarray[$countrycode];
+}
+
+$cityName= $forecast["city"]["name"];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,6 +45,13 @@
                         <!-- logo text -->
                         <h1 class="logo-text">VTDT Sky</h1>
                     </div>
+                </div>
+                <!-- location box -->
+                <div class="header-location">
+                    <!-- that maps icon -->
+                    <img src="assets/icons/google-maps.gif" width="25px" height="25px"> 
+                    <!-- location text -->
+                    <p class="location-text"><?php echo $cityName; echo ", "; echo countryCodeToName($forecast["city"]["country"], $country)?></p>
                 </div>
             </div>
         </div>
