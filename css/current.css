@@ -1,0 +1,13 @@
+.localtime{
+    margin-top:0px;
+    font-weight: bold;
+}
+/* current weather time */
+.current-weather {
+    line-height: 0;
+}
+
+.overcast {
+    margin-left: 200px;
+    margin-top: 20px;
+}
