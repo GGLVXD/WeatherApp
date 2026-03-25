@@ -1,0 +1,82 @@
+/* main content section for all the grid */
+.content-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+/* box for current weather info */
+.current-box {
+    background-color: green;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+/* air quality box */
+.airquality-box{
+    background-color: red;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+/* wind box */
+.wind-box{
+    background-color: purple;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+/* humidty box */
+.humidity-box{
+    background-color: pink;
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+/* visibility box */
+.visibility-box{
+    background-color: orange;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 3;
+    grid-row-end: 3;
+}
+/* pressure box */
+.pressure-box{
+    background-color: blue;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 3;
+}
+/* pressure another? box */
+.pressure2-box{
+    background-color: yellow;
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 3;
+}
+
+/* summary box */
+.summary-box{
+    background-color: black;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 4;
+}
+/* forecast box */
+.forecast-box {
+    background-color: black;
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}

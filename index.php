@@ -27,6 +27,8 @@ $cityName= $forecast["city"]["name"];
     <link rel="stylesheet" href="src/css/global.css">
     <!-- header -->
     <link rel="stylesheet" href="src/css/header.css">
+    <!-- content -->
+    <link rel="stylesheet" href="src/css/content.css">
 </head>
 <body>
     <!-- header -->
@@ -79,4 +81,46 @@ $cityName= $forecast["city"]["name"];
             </div>
         </div>
     </header>
+
+    <content> 
+        <!-- main content section -->
+        <div class="content-container">
+            <!-- current weather box -->
+            <div class="current-box">
+                e
+            </div>
+            <!-- current airquality box -->
+            <div class="airquality-box">
+                e
+            </div>
+            <!-- wind box -->
+            <div class="wind-box">
+                e
+            </div>
+            <!-- humidity box -->
+            <div class="humidity-box">
+                e
+            </div>
+            <!-- visibiliy box -->
+            <div class="visibility-box">
+                e
+            </div>
+            <!-- pressure box -->
+            <div class="pressure-box">
+                e
+            </div>
+            <!-- pressure another box -->
+            <div class="pressure2-box">
+                e
+            </div>
+            <!-- summary box -->
+            <div class="summary-box">
+                e
+            </div>
+            <!-- forecast box -->
+            <div class="forecast-box">
+                e
+            </div>
+        </div>
+    </content>
 </body>
