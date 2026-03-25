@@ -1,0 +1,121 @@
+/* HEADER */
+
+/* header */
+.header {
+    height: 13%; /* pixel perfect from original */
+}
+
+/* header div */
+.header-container {
+    margin-left: 3%; /* spacing from screen to container */
+    margin-right: 3%;
+    display: flex;
+    background-color: #FFFFFF;
+    height: 100%;
+}
+
+
+/* hamburger, logo, city stuff */
+.logo-container {
+    display: flex;
+    width: 42%; /* size of logo and city stuff */
+    align-items: center;
+    height: 100%;
+}
+
+.logo-text-box {
+    display: flex;
+    width: 50%;
+    margin-left: 5%;
+}
+
+/* logo text (VTDT Sky) */
+.logo-text {
+    margin-top: 0;
+    color: #3B82F6;
+    font-size: 24px;
+}
+
+/* logo + hamburger */
+.logo-hamburger{
+    display: flex;
+    width: 100%; 
+    gap: 15px; /* space from logo to hamburger */
+
+}
+
+/* hamburger button */
+.hamburger {
+    border: none;
+    background-color: #FFFFFF;
+    font-size: 20px;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+/* location box */
+.header-location {
+    display: flex;
+    align-items: center;
+}
+
+/* city name (p tag) */
+.location-text {
+    margin: 0;
+    font-size: 16px;
+    /* extracted from extension */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+/* search box + theme icon */
+.search-theme-box{
+    display: flex;
+    width: 35%;
+    align-items: center;
+
+}
+
+/* https://bootstrapexamples.com/@anonymous/search-bar */
+
+
+/* search container */
+.search-container {
+    width: 75%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-right: 0;
+    border: solid #D1D5DB;
+    border-width: 1px;
+    border-radius: 10px;
+    height: 65%;
+}
+
+/* search input */
+.search-input {
+    height: 65%;
+    flex: 1;
+    border: none;
+    background-color: transparent;
+    padding-left: 35px;
+}
+/* icon for the search thing*/ 
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #4B5563;
+}
+
+/* worldwide icon in search */
+.worldwide-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F3F4F6;
+    height: 100%;
+    padding: 0 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
