@@ -66,6 +66,11 @@ $cityName= $forecast["city"]["name"];
                     </div>
                 </div>
             </div>
+            <!-- notifications and settings container -->
+            <div class="notifications-settings-container">
+                <img class="notifications-settings-images" alt="notification" src="assets/icons/notification.gif" width="25px" height="30px">
+                <img class="notifications-settings-images" alt="settings" src="assets/icons/settings.gif" width="25px" height="30px">
+            </div>
         </div>
     </header>
 </body>

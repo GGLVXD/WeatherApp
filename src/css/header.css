@@ -119,3 +119,18 @@
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+
+/* notification and settings container */
+.notifications-settings-container{
+    justify-content: flex-end;
+    display: flex;
+    width: 22%;
+    align-items: center;
+    gap: 30px;
+
+}
+
+/* notifications and settings images */
+.notifications-settings-images{
+    margin: 0;
+}
