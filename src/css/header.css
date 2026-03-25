@@ -80,7 +80,7 @@
 
 /* search container */
 .search-container {
-    width: 75%;
+    width: 55%;
     position: relative;
     display: flex;
     align-items: center;
@@ -89,15 +89,18 @@
     border-width: 1px;
     border-radius: 10px;
     height: 65%;
+    overflow: hidden;
 }
 
 /* search input */
 .search-input {
-    height: 65%;
+    height: 100%;
     flex: 1;
     border: none;
     background-color: transparent;
     padding-left: 35px;
+    padding-right: 52px;
+
 }
 /* icon for the search thing*/ 
 .search-icon {
@@ -110,14 +113,35 @@
 
 /* worldwide icon in search */
 .worldwide-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #F3F4F6;
+    width: 42px;
     height: 100%;
-    padding: 0 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-left: 1px solid #D1D5DB;
+}
+/* image property */
+.worldwide-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+/* theme switcher container */
+.theme-switcher-container{
+    display: flex;
+    margin-left: 5%;
+    align-items: center;
+}
+
+/* theme switcher button */
+.theme-switcher-button{
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 /* notification and settings container */
@@ -132,5 +156,6 @@
 
 /* notifications and settings images */
 .notifications-settings-images{
+    display: flex;
     margin: 0;
 }

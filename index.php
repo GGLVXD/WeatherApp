@@ -62,8 +62,14 @@ $cityName= $forecast["city"]["name"];
                     <input type="text" class="search-input" placeholder="Search Location">
                     <!-- worldwide icon -->
                     <div class="worldwide-icon">
-                        <img src="assets/icons/worldwide.gif" alt="worldwide" width="25px">
+                        <img src="assets/icons/worldwide.gif" alt="worldwide">
                     </div>
+                </div>
+                <div class="theme-switcher-container">
+                    <button class="theme-switcher-button btn btn-dark">
+                        <img src="assets/icons/sun.svg" alt="sun icon" width="20" height="20">
+                        Light
+                    </button>
                 </div>
             </div>
             <!-- notifications and settings container -->
