@@ -17,7 +17,7 @@ $cityName= $forecast["city"]["name"];
 
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <!-- font awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
@@ -49,9 +49,21 @@ $cityName= $forecast["city"]["name"];
                 <!-- location box -->
                 <div class="header-location">
                     <!-- that maps icon -->
-                    <img src="assets/icons/google-maps.gif" width="25px" height="25px"> 
+                    <img src="assets/icons/google-maps.gif" alt="worldwide" width="25px" height="25px"> 
                     <!-- location text -->
                     <p class="location-text"><?php echo $cityName; echo ", "; echo countryCodeToName($forecast["city"]["country"], $country)?></p>
+                </div>
+            </div>
+            <!-- search box + theme switcher -->
+            <div class="search-theme-box">
+                <!-- search box container -->
+                <div class="search-container my-2 my-lg-0">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Search Location">
+                    <!-- worldwide icon -->
+                    <div class="worldwide-icon">
+                        <img src="assets/icons/worldwide.gif" alt="worldwide" width="25px">
+                    </div>
                 </div>
             </div>
         </div>
