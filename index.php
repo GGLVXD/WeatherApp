@@ -22,6 +22,10 @@ $city = $current["location"]["region"];
 //$cityName= $forecast["city"]["name"];
 
 
+$sunrise = $astronomy["astronomy"]["astro"]["sunrise"];
+$sunset = $astronomy["astronomy"]["astro"]["sunset"];
+
+
 // forcast
 
 // 00:00 AM
@@ -47,7 +51,6 @@ $twoamDescription = $forecast["forecast"]["forecastday"][0]["hour"][2]["conditio
 $twoamTemperature = $forecast["forecast"]["forecastday"][0]["hour"][2]["temp_c"];
 $twoamWind = $forecast["forecast"]["forecastday"][0]["hour"][2]["wind_kph"];
 $twoamHumidity = $forecast["forecast"]["forecastday"][0]["hour"][2]["humidity"];
-$m
 
 
 ?>
@@ -220,14 +223,68 @@ $m
                 <div class="summary-text-container">
                     <p class="summary-text">Sun & Moon Summary</p>
                 </div>
-                <div class="air-qualitaty-summary-container">
-                    <img class="summary-image" src="assets/icons/sun.gif" alt="sun icon">
-                    <p class="air-qualitaty-summary">Air Quality</p>
+                <div class="day-air-qualitaty-summary-container">
+                    <img class="summary-image" src="assets/icons/moon.gif" alt="sun icon">
+                    <!-- couldnt find air quality -->
+                    <div class="air-quality-container">
+                        <div class="air-quality-text">
+                            <p class="air-qualitaty-summary">Air Quality</p>
+                        </div>
+                        <div class="air-quality-var">
+                            <p><?php echo $air_quality?></p>
+                        </div>
+                    </div>
                 </div>
+                <div class="night-air-qualitaty-summary-container">
+                    <img class="summary-image" src="assets/icons/sun.gif" alt="sun icon">
+                    <div class="air-quality-container">
+                        <div class="air-quality-text">
+                            <p class="air-qualitaty-summary">Air Quality</p>
+                        </div>
+                        <div class="air-quality-var">
+                            <p><?php echo $air_quality?></p>
+                        </div>
+                    </div>
+                    <div class="sunrise-container">
+                        <div class="sunrise-icon">
+                            <img class="sunrise-icon-image" src="assets/icons/field.gif" alt="sunrise icon">
+                        </div>
+                        <div class="sunrise-text-container">
+                            <p class="sunrise">sunrise</p> 
+                        </div>
+                        <div class="sunrise-var-container">
+                        <p class="sunrise-var"><?php echo $sunrise ?></p><br>
+                        </div>
+                    </div>
+                    <div class="sunset-container">
+                        <div class="sunset-icon">
+                            <img class="sunset-icon-image" src="assets/icons/sunset.gif" alt="sunset icon">
+                        </div>
+                        <div class="sunset-text-container">
+                            <p class="sunset">sunset</p>
+                        </div>
+                        <div class="sunset-var-container">
+                        <p class="sunset-var"><?php echo $sunset ?></p>
+                        </div>
+                    </div>
+                </div>
+            <div class="moonrise-container">
+                <div class="moonrise-container">
+                    <div class="moonrise-image-container">
+                        <img class="moonrise-icon-image" src="assets/icons/moonrise.gif" alt="moonrise icon">
+                    </div>
+                    <div class="moonrise-text-container">
+                        <p class="moonrise">moonrise</p>
+                    </div>
+                    <div class="moonrise-var-container">
+                        <p class="moonrise-var">nav</p>
+                    </div>
+                </div>
+            </div>
             </div>
             <!-- forecast box -->
             <div class="forecast-box shadow p-3 mb-5 bg-white rounded">
-                <div class="w3-bar w3-black">
+                <div class="w3-bar w3-black tabs">
                     <button class="w3-bar-item w3-button button-switcher" onclick="openTab('Today')">Today</button>
                     <button class="w3-bar-item w3-button button-switcher" onclick="openTab('Tomorrow')">Tomorrow</button>
                     <button class="button-switcher" onclick="openTab('10 Days')">10 Days</button>
@@ -239,24 +296,28 @@ $m
                             <p class="time"><?php echo date('H:i A', $midnightTime);?></p><br>
                             <p class="forecast-description"> <?php echo $midnightDescription;?> 
                         </div>
-                            <p class="temperature"> <?php echo $midnightTemperature?>°C></p></div>
+                            <p class="temperature"> <?php echo $midnightTemperature?>°C</p></div>
                     </div>
-                    <div class="laiks1 weather-box">
+                    <div class="laiks1 weather-box style='display:none'">
                         <img class="forecast-icon" src="https:<?php echo $oneamIcon ?>">
                             <div class="time-description">
                             <p class="time"><?php echo date('H:i A', $oneamTime);?></p><br>
                             <p class="forecast-description"> <?php echo $oneamDescription;?> 
                         </div>
-                            <p class="temperature"> <?php echo $oneamTemperature?>°C></p></div>
+                            <p class="temperature"> <?php echo $oneamTemperature?>°C</p></div>
+                    </div>
+                </div>
+                <div id="Tomorrow" class="city" style="display: none;">
+                    <div class="laiks1 weather-box">
+                        <img class="forecast-icon" src="https:<?php echo $twoamIcon ?>">
+                            <div class="time-description">
+                            <p class="time"><?php echo date('H:i A', $twoamTime);?></p><br>
+                            <p class="forecast-description"> <?php echo $twoamDescription;?> 
+                        </div>
+                            <p class="temperature"> <?php echo $twoamTemperature?>°C</p></div>
                     </div>
                 </div>
 
-                <div id="Tomorrow" class="w3-container city " style="display:none">
-                    <div class="laiks1">
-                        <h2>London2</h2>
-                        <p>London is the capital city of England.</p>
-                    </div>
-            </div>
     </content>
 </body>
 <script src="src/js/live.js"></script>

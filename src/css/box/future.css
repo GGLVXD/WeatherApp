@@ -15,6 +15,7 @@
 .temperature {
     margin-left: auto;
     font-weight: bold;
+    font-size: 20px;
 }
 
 
@@ -54,3 +55,8 @@
 
 }
 
+
+
+.tabs {
+    margin-bottom: 15px;
+}
