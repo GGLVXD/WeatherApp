@@ -272,7 +272,7 @@ $twoamHumidity = $forecast["forecast"]["forecastday"][0]["hour"][2]["humidity"];
                         </div>
                     </div>
                 </div>
-            <div class="moonrise-container">
+            <div class="moon-summary-container">
                 <div class="moonrise-container">
                     <div class="moonrise-image-container">
                         <img class="moonrise-icon-image" src="assets/icons/moon-rise.gif" alt="moonrise icon">

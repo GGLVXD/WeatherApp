@@ -32,11 +32,19 @@
 }
 
 
-.sunrise-container{
-    margin-left: 100px;
+.sunrise-container {
+    margin-left: 230px;
+    display: flex;
+    flex-direction: column;
+}
+.moonrise-container{
+    margin-left: 400px;
+    display: flex;
+    flex-direction: column;
 }
 
-.sunrise-text-container {
+.sunrise-text-container,
+.moonrise-text-container {
     line-height: 0;
 }
 
@@ -53,7 +61,8 @@
     letter-spacing: 2px;
 }
 
-.sunrise-icon{
+.sunrise-icon,
+.moonrise-image-container{
     margin-left: 5px;
 }
 
@@ -73,14 +82,14 @@
 }
 
 
-.moonrise-container{
-    margin-left: 135px;
+.moon-summary-container {
+    display: flex;
+    width: 100%;
 }
 
 .moonrise-icon-image{
     width: 30px;
     height: 30px;
-    margin-left: 5px;
 }
 
 .moonset-text-container{
