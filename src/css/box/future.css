@@ -10,10 +10,13 @@
 .weather-box {
     display: flex;
     border-bottom: gray solid 1px;
+    align-items: flex-start;
+    padding: 2px 0;
 }
 
 .temperature {
-    margin-left: auto;
+    margin: 0 0 0 auto;
+    padding: 0;
     font-weight: bold;
     font-size: 20px;
 }
@@ -21,6 +24,8 @@
 
 .time {
     font-size: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -36,18 +41,28 @@
 
 .laiks1 {
     display: flex;
+    margin: 0;
+    padding: 0;
 }
 
-.time-description{
-    
+.time-description {
+    margin: 0;
+    padding: 0;
 }
 .forecast-icon {
     width: 30px;
     height: 30px;
+    margin: 0;
+    padding: 0;
 }
 
 .forecast-description {
-    margin-top: -40px;
+    margin: 0 0 0;
+    padding: 0;
+}
+
+.time-description p {
+    margin-bottom: 0;
 }
 
 
@@ -55,7 +70,10 @@
 
 }
 
-
+.w3-container.city {
+    max-height: 400px;
+    overflow-y: auto;
+}
 
 .tabs {
     margin-bottom: 15px;

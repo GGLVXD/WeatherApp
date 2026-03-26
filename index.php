@@ -5,6 +5,24 @@ function countryCodeToName($countrycode, $countryarray) {
   return $countryarray[$countrycode];
 }
 
+function getHourlyForecastData($forecast, $day = 0) {
+    $hours = $forecast["forecast"]["forecastday"][$day]["hour"] ?? [];
+    $hourlyData = [];
+
+    foreach ($hours as $hour) {
+        $hourlyData[] = [
+            "time_epoch" => $hour["time_epoch"] ?? null,
+            "icon" => $hour["condition"]["icon"] ?? "",
+            "description" => $hour["condition"]["text"] ?? "",
+            "temperature" => $hour["temp_c"] ?? null,
+            "wind" => $hour["wind_kph"] ?? null,
+            "humidity" => $hour["humidity"] ?? null,
+        ];
+    }
+
+    return $hourlyData;
+}
+
 $localtime = $current["location"]["localtime_epoch"]; // localtime in unix
 $air_quality = $current["current"]["uv"]; // air quality 
 $temp = $current["current"]["temp_c"];
@@ -31,29 +49,8 @@ $moonset = $astronomy["astronomy"]["astro"]["moonset"];
 
 // forcast
 
-// 00:00 AM
-$midnightTime = $forecast["forecast"]["forecastday"][0]["hour"][0]["time_epoch"];
-$midnightIcon = $forecast["forecast"]["forecastday"][0]["hour"][0]["condition"]["icon"];
-$midnightDescription = $forecast["forecast"]["forecastday"][0]["hour"][0]["condition"]["text"];
-$midnightTemperature = $forecast["forecast"]["forecastday"][0]["hour"][0]["temp_c"];
-$midnightWind = $forecast["forecast"]["forecastday"][0]["hour"][0]["humidity"];
-$midnightHumidity = $forecast["forecast"]["forecastday"][0]["hour"][0]["wind_kph"];
-
-// 01:00 AM
-$oneamTime = $forecast["forecast"]["forecastday"][0]["hour"][1]["time_epoch"];  
-$oneamIcon = $forecast["forecast"]["forecastday"][0]["hour"][1]["condition"]["icon"];
-$oneamDescription = $forecast["forecast"]["forecastday"][0]["hour"]["0"]["condition"]["text"];
-$oneamTemperature = $forecast["forecast"]["forecastday"][0]["hour"][1]["temp_c"];
-$oneamWind = $forecast["forecast"]["forecastday"][0]["hour"][1]["wind_kph"];
-$oneamHumidity = $forecast["forecast"]["forecastday"][0]["hour"][1]["humidity"];
-
-// 02:00 AM
-$twoamTime= $forecast["forecast"]["forecastday"][0]["hour"][2]["time_epoch"];
-$twoamIcon = $forecast["forecast"]["forecastday"][0]["hour"][2]["condition"]["icon"];
-$twoamDescription = $forecast["forecast"]["forecastday"][0]["hour"][2]["condition"]["text"];
-$twoamTemperature = $forecast["forecast"]["forecastday"][0]["hour"][2]["temp_c"];
-$twoamWind = $forecast["forecast"]["forecastday"][0]["hour"][2]["wind_kph"];
-$twoamHumidity = $forecast["forecast"]["forecastday"][0]["hour"][2]["humidity"];
+$todayHourlyData = getHourlyForecastData($forecast, 0);
+$tomorrowHourlyData = getHourlyForecastData($forecast, 1);
 
 
 
@@ -301,35 +298,108 @@ $twoamHumidity = $forecast["forecast"]["forecastday"][0]["hour"][2]["humidity"];
             <div class="forecast-box shadow p-3 mb-5 bg-white rounded">
                 <div class="w3-bar w3-black tabs">
                     <button class="w3-bar-item w3-button button-switcher" onclick="openTab('Today')">Today</button>
-                    <button class="w3-bar-item w3-button button-switcher" onclick="openTab('Tomorrow')">Tomorrow</button>
-                    <button class="button-switcher" onclick="openTab('10 Days')">10 Days</button>
                 </div>
                 <div id="Today" class="w3-container city">
+                    <?php
+                        $h00Icon = $todayHourlyData[0]["icon"];
+                        $h03Icon = $todayHourlyData[3]["icon"];
+                        $h06Icon = $todayHourlyData[6]["icon"];
+                        $h09Icon = $todayHourlyData[9]["icon"];
+                        $h12Icon = $todayHourlyData[12]["icon"];
+                        $h15Icon = $todayHourlyData[15]["icon"];
+                        $h18Icon = $todayHourlyData[18]["icon"];
+                        $h21Icon = $todayHourlyData[21]["icon"];
+
+                        $h00Time = date('H:i A', $todayHourlyData[0]["time_epoch"]);
+                        $h03Time = date('H:i A', $todayHourlyData[3]["time_epoch"]);
+                        $h06Time = date('H:i A', $todayHourlyData[6]["time_epoch"]);
+                        $h09Time = date('H:i A', $todayHourlyData[9]["time_epoch"]);
+                        $h12Time = date('H:i A', $todayHourlyData[12]["time_epoch"]);
+                        $h15Time = date('H:i A', $todayHourlyData[15]["time_epoch"]);
+                        $h18Time = date('H:i A', $todayHourlyData[18]["time_epoch"]);
+                        $h21Time = date('H:i A', $todayHourlyData[21]["time_epoch"]);
+
+                        $h00Description = $todayHourlyData[0]["description"];
+                        $h03Description = $todayHourlyData[3]["description"];
+                        $h06Description = $todayHourlyData[6]["description"];
+                        $h09Description = $todayHourlyData[9]["description"];
+                        $h12Description = $todayHourlyData[12]["description"];
+                        $h15Description = $todayHourlyData[15]["description"];
+                        $h18Description = $todayHourlyData[18]["description"];
+                        $h21Description = $todayHourlyData[21]["description"];
+
+                        $h00Temp = $todayHourlyData[0]["temperature"];
+                        $h03Temp = $todayHourlyData[3]["temperature"];
+                        $h06Temp = $todayHourlyData[6]["temperature"];
+                        $h09Temp = $todayHourlyData[9]["temperature"];
+                        $h12Temp = $todayHourlyData[12]["temperature"];
+                        $h15Temp = $todayHourlyData[15]["temperature"];
+                        $h18Temp = $todayHourlyData[18]["temperature"];
+                        $h21Temp = $todayHourlyData[21]["temperature"];
+                    ?>
                     <div class="laiks1 weather-box">
-                        <img class="forecast-icon" src="https:<?php echo $midnightIcon ?>">
+                        <img class="forecast-icon" src="https:<?php echo $h00Icon; ?>">
                             <div class="time-description">
-                            <p class="time"><?php echo date('H:i A', $midnightTime);?></p><br>
-                            <p class="forecast-description"> <?php echo $midnightDescription;?> 
+                            <p class="time"><?php echo $h00Time; ?></p>
+                            <p class="forecast-description"> <?php echo $h00Description; ?></p>
                         </div>
-                            <p class="temperature"> <?php echo $midnightTemperature?>°C</p></div>
+                            <p class="temperature"> <?php echo $h00Temp . "°C"; ?></p>
                     </div>
-                    <div class="laiks1 weather-box style='display:none'">
-                        <img class="forecast-icon" src="https:<?php echo $oneamIcon ?>">
-                            <div class="time-description">
-                            <p class="time"><?php echo date('H:i A', $oneamTime);?></p><br>
-                            <p class="forecast-description"> <?php echo $oneamDescription;?> 
-                        </div>
-                            <p class="temperature"> <?php echo $oneamTemperature?>°C</p></div>
-                    </div>
-                </div>
-                <div id="Tomorrow" class="city" style="display: none;">
                     <div class="laiks1 weather-box">
-                        <img class="forecast-icon" src="https:<?php echo $twoamIcon ?>">
+                        <img class="forecast-icon" src="https:<?php echo $h03Icon; ?>">
                             <div class="time-description">
-                            <p class="time"><?php echo date('H:i A', $twoamTime);?></p><br>
-                            <p class="forecast-description"> <?php echo $twoamDescription;?> 
+                            <p class="time"><?php echo $h03Time; ?></p>
+                            <p class="forecast-description"> <?php echo $h03Description; ?></p>
                         </div>
-                            <p class="temperature"> <?php echo $twoamTemperature?>°C</p></div>
+                            <p class="temperature"> <?php echo $h03Temp . "°C"; ?></p>
+                    </div>
+                    <div class="laiks1 weather-box">
+                        <img class="forecast-icon" src="https:<?php echo $h06Icon; ?>">
+                            <div class="time-description">
+                            <p class="time"><?php echo $h06Time; ?></p>
+                            <p class="forecast-description"> <?php echo $h06Description; ?></p>
+                        </div>
+                            <p class="temperature"> <?php echo $h06Temp . "°C"; ?></p>
+                    </div>
+                    <div class="laiks1 weather-box">
+                        <img class="forecast-icon" src="https:<?php echo $h09Icon; ?>">
+                            <div class="time-description">
+                            <p class="time"><?php echo $h09Time; ?></p>
+                            <p class="forecast-description"> <?php echo $h09Description; ?></p>
+                        </div>
+                            <p class="temperature"> <?php echo $h09Temp . "°C"; ?></p>
+                    </div>
+                    <div class="laiks1 weather-box">
+                        <img class="forecast-icon" src="https:<?php echo $h12Icon; ?>">
+                            <div class="time-description">
+                            <p class="time"><?php echo $h12Time; ?></p>
+                            <p class="forecast-description"> <?php echo $h12Description; ?></p>
+                        </div>
+                            <p class="temperature"> <?php echo $h12Temp . "°C"; ?></p>
+                    </div>
+                    <div class="laiks1 weather-box">
+                        <img class="forecast-icon" src="https:<?php echo $h15Icon; ?>">
+                            <div class="time-description">
+                            <p class="time"><?php echo $h15Time; ?></p>
+                            <p class="forecast-description"> <?php echo $h15Description; ?></p>
+                        </div>
+                            <p class="temperature"> <?php echo $h15Temp . "°C"; ?></p>
+                    </div>
+                    <div class="laiks1 weather-box">
+                        <img class="forecast-icon" src="https:<?php echo $h18Icon; ?>">
+                            <div class="time-description">
+                            <p class="time"><?php echo $h18Time; ?></p>
+                            <p class="forecast-description"> <?php echo $h18Description; ?></p>
+                        </div>
+                            <p class="temperature"> <?php echo $h18Temp . "°C"; ?></p>
+                    </div>
+                    <div class="laiks1 weather-box">
+                        <img class="forecast-icon" src="https:<?php echo $h21Icon; ?>">
+                            <div class="time-description">
+                            <p class="time"><?php echo $h21Time; ?></p>
+                            <p class="forecast-description"> <?php echo $h21Description; ?></p>
+                        </div>
+                            <p class="temperature"> <?php echo $h21Temp . "°C"; ?></p>
                     </div>
                 </div>
 
