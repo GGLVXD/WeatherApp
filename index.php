@@ -6,6 +6,7 @@ function countryCodeToName($countrycode, $countryarray) {
 }
 
 $localtime = $current["location"]["localtime_epoch"]; // localtime in unix
+$air_quality = $current["current"]["uv"]; // air quality 
 $temp = $current["current"]["temp_c"];
 $feelslike = $current["current"]["feelslike_c"]; // feels like temp
 $currenticon = $current["current"]["condition"]["icon"]; // icon for the current weather
@@ -161,7 +162,7 @@ $m
                     <p class="title-text-box">Air Quality</p>
                 </div>
                 <div class="content-box">
-                    <p class="content-text"><?php echo $humidity ?></p>
+                    <p class="content-text"><?php echo $air_quality ?></p>
                 </div>
             </div>
             <!-- wind box -->
@@ -220,7 +221,7 @@ $m
                     <p class="summary-text">Sun & Moon Summary</p>
                 </div>
                 <div class="air-qualitaty-summary-container">
-                    <img src="assets/icons/sun.gif" alt="sun icon" width="30" height="30">
+                    <img class="summary-image" src="assets/icons/sun.gif" alt="sun icon">
                     <p class="air-qualitaty-summary">Air Quality</p>
                 </div>
             </div>

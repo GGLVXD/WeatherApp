@@ -11,3 +11,9 @@
     display: flex;
     margin-top: -160px;
 }
+
+.summary-image {
+    width: 70px;
+    height: 60px;
+    margin-right: 10px;
+}
