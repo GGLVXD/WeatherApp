@@ -21,6 +21,34 @@ $city = $current["location"]["region"];
 //$cityName= $forecast["city"]["name"];
 
 
+// forcast
+
+// 00:00 AM
+$midnightTime = $forecast["forecast"]["forecastday"][0]["hour"][0]["time_epoch"];
+$midnightIcon = $forecast["forecast"]["forecastday"][0]["hour"][0]["condition"]["icon"];
+$midnightDescription = $forecast["forecast"]["forecastday"][0]["hour"][0]["condition"]["text"];
+$midnightTemperature = $forecast["forecast"]["forecastday"][0]["hour"][0]["temp_c"];
+$midnightWind = $forecast["forecast"]["forecastday"][0]["hour"][0]["humidity"];
+$midnightHumidity = $forecast["forecast"]["forecastday"][0]["hour"][0]["wind_kph"];
+
+// 01:00 AM
+$oneamTime = $forecast["forecast"]["forecastday"][0]["hour"][1]["time_epoch"];  
+$oneamIcon = $forecast["forecast"]["forecastday"][0]["hour"][1]["condition"]["icon"];
+$oneamDescription = $forecast["forecast"]["forecastday"][0]["hour"]["0"]["condition"]["text"];
+$oneamTemperature = $forecast["forecast"]["forecastday"][0]["hour"][1]["temp_c"];
+$oneamWind = $forecast["forecast"]["forecastday"][0]["hour"][1]["wind_kph"];
+$oneamHumidity = $forecast["forecast"]["forecastday"][0]["hour"][1]["humidity"];
+
+// 02:00 AM
+$twoamTime= $forecast["forecast"]["forecastday"][0]["hour"][2]["time_epoch"];
+$twoamIcon = $forecast["forecast"]["forecastday"][0]["hour"][2]["condition"]["icon"];
+$twoamDescription = $forecast["forecast"]["forecastday"][0]["hour"][2]["condition"]["text"];
+$twoamTemperature = $forecast["forecast"]["forecastday"][0]["hour"][2]["temp_c"];
+$twoamWind = $forecast["forecast"]["forecastday"][0]["hour"][2]["wind_kph"];
+$twoamHumidity = $forecast["forecast"]["forecastday"][0]["hour"][2]["humidity"];
+$m
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,6 +77,8 @@ $city = $current["location"]["region"];
     <link rel="stylesheet" href="src/css/box/box.css">
     <!-- future forecast box -->
     <link rel="stylesheet" href="src/css/box/future.css">
+    <!-- summary -->
+    <link rel="stylesheet" href="src/css/box/summary.css">
 </head>
 <body>
     <!-- header -->
@@ -131,7 +161,7 @@ $city = $current["location"]["region"];
                     <p class="title-text-box">Air Quality</p>
                 </div>
                 <div class="content-box">
-                    <p><?php echo $humidity ?></p>
+                    <p class="content-text"><?php echo $humidity ?></p>
                 </div>
             </div>
             <!-- wind box -->
@@ -186,7 +216,13 @@ $city = $current["location"]["region"];
             </div>
             <!-- summary box -->
             <div class="summary-box shadow p-3 mb-5 bg-white rounded">
-                e
+                <div class="summary-text-container">
+                    <p class="summary-text">Sun & Moon Summary</p>
+                </div>
+                <div class="air-qualitaty-summary-container">
+                    <img src="assets/icons/sun.gif" alt="sun icon" width="30" height="30">
+                    <p class="air-qualitaty-summary">Air Quality</p>
+                </div>
             </div>
             <!-- forecast box -->
             <div class="forecast-box shadow p-3 mb-5 bg-white rounded">
@@ -197,12 +233,20 @@ $city = $current["location"]["region"];
                 </div>
                 <div id="Today" class="w3-container city">
                     <div class="laiks1 weather-box">
-                        <h2 class="time">Day</h2>
-                        <p class="temperature"></p>
+                        <img class="forecast-icon" src="https:<?php echo $midnightIcon ?>">
+                            <div class="time-description">
+                            <p class="time"><?php echo date('H:i A', $midnightTime);?></p><br>
+                            <p class="forecast-description"> <?php echo $midnightDescription;?> 
+                        </div>
+                            <p class="temperature"> <?php echo $midnightTemperature?>°C></p></div>
                     </div>
                     <div class="laiks1 weather-box">
-                        <h2 class="time">Night</h2>
-                        <p class="temperature"></p>
+                        <img class="forecast-icon" src="https:<?php echo $oneamIcon ?>">
+                            <div class="time-description">
+                            <p class="time"><?php echo date('H:i A', $oneamTime);?></p><br>
+                            <p class="forecast-description"> <?php echo $oneamDescription;?> 
+                        </div>
+                            <p class="temperature"> <?php echo $oneamTemperature?>°C></p></div>
                     </div>
                 </div>
 
@@ -216,10 +260,5 @@ $city = $current["location"]["region"];
 </body>
 <script src="src/js/live.js"></script>
 <script src="src/js/onenter.js"></script>
-<script src="src/js/getdata.js"></script>
 <script src="src/js/tabs.js"></script>
-<script>
-    // execute on load lol (default to Riga)
-    getData();
-</script>
 </html>

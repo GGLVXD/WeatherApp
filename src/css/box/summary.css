@@ -1,0 +1,13 @@
+.summary-text-container {
+    display: flex;
+    height: 100%;
+}
+
+.summary-text {
+    font-size: 15px;
+}
+
+.air-qualitaty-summary-container{
+    display: flex;
+    margin-top: -160px;
+}

@@ -19,7 +19,7 @@
 
 
 .time {
-    font-size: 10px;
+    font-size: 20px;
 }
 
 
@@ -32,3 +32,25 @@
     text-underline-offset: 5px;
     text-decoration-thickness: 2px;
 }
+
+.laiks1 {
+    display: flex;
+}
+
+.time-description{
+    
+}
+.forecast-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.forecast-description {
+    margin-top: -40px;
+}
+
+
+.weather-forecast {
+
+}
+
