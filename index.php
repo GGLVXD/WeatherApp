@@ -125,9 +125,9 @@ $tomorrowHourlyData = getHourlyForecastData($forecast, 1);
                     </div>
                 </div>
                 <div class="theme-switcher-container">
-                    <button class="theme-switcher-button btn btn-dark">
-                        <img src="assets/icons/sun.svg" alt="sun icon" width="20" height="20">
-                        Light
+                    <button class="theme-switcher-button btn btn-dark" onclick="toggleTheme()">
+                        <i class="fa-regular fa-moon"></i>
+                        Dark
                     </button>
                 </div>
             </div>

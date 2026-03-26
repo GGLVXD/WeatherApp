@@ -10,3 +10,58 @@ html, body {
 * {
   font-family: "Segoe UI", Arial, sans-serif;
 }
+
+body.dark-mode {
+    background-color: #1F2937;
+}
+
+body.dark-mode .header-container {
+    background-color: #4B5563;
+    color: #F3F4F6;
+}
+
+body.dark-mode .logo-text {
+    color: #60A5FA;
+}
+
+body.dark-mode .location-text {
+    color: #D1D5DB;
+}
+
+body.dark-mode .search-container {
+    border-color: #4B5563;
+    background-color: #4B5563;
+}
+
+body.dark-mode .search-input {
+    background-color: transparent;
+    color: #F3F4F6;
+}
+
+body.dark-mode .search-input::placeholder {
+    color: #9CA3AF;
+}
+
+body.dark-mode .search-icon {
+    color: #9CA3AF;
+}
+
+body.dark-mode .worldwide-icon {
+    background-color: #4B5563;
+    border-left-color: #4B5563;
+}
+
+body.dark-mode .shadow {
+    background-color: #4B5563 !important;
+    color: #F3F4F6;
+}
+
+body.dark-mode p,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: #D1D5DB;
+}

@@ -23,3 +23,35 @@ if (input) {
         window.history.replaceState({}, '', url);
     });
 }
+
+function toggleTheme() {
+    var body = document.body;
+    var button = document.querySelector('.theme-switcher-button');
+    var icon = button.querySelector('i');
+    var isDarkMode = body.classList.contains('dark-mode');
+    
+    if (isDarkMode == true) {
+        body.classList.remove('dark-mode');
+        icon.className = 'fa-regular fa-moon';
+        button.innerHTML = '<i class="fa-regular fa-moon"></i> Dark';
+        localStorage.setItem('theme', 'light');
+    } else {
+        body.classList.add('dark-mode');
+        icon.className = 'fa-solid fa-sun';
+        button.innerHTML = '<i class="fa-solid fa-sun"></i> Light';
+        localStorage.setItem('theme', 'dark');
+    }
+}
+
+window.onload = function() {
+    var savedTheme = localStorage.getItem('theme');
+    var button = document.querySelector('.theme-switcher-button');
+    
+    if (savedTheme == 'dark') {
+        document.body.classList.add('dark-mode');
+        button.innerHTML = '<i class="fa-solid fa-sun"></i> Light';
+    } else {
+        document.body.classList.remove('dark-mode');
+        button.innerHTML = '<i class="fa-regular fa-moon"></i> Dark';
+    }
+};
