@@ -14,6 +14,7 @@ $humidity = $current["current"]["humidity"];
 $visibility = $current["current"]["vis_km"];
 $pressure_in = $current["current"]["pressure_in"];
 $pressure_mb = $current["current"]["pressure_mb"];
+$wind_speed = $current["current"]["wind_kph"];
 
 $country = $current["location"]["country"];
 $city = $current["location"]["region"];
@@ -46,6 +47,8 @@ $city = $current["location"]["region"];
     <link rel="stylesheet" href="src/css/box/current.css">
     <!-- global box things -->
     <link rel="stylesheet" href="src/css/box/box.css">
+    <!-- future forecast box -->
+    <link rel="stylesheet" href="src/css/box/future.css">
 </head>
 <body>
     <!-- header -->
@@ -133,7 +136,13 @@ $city = $current["location"]["region"];
             </div>
             <!-- wind box -->
             <div class="wind-box shadow p-3 mb-5 bg-white rounded">
-                e
+                <div class="title-box">
+                    <img class="box-icon" src="assets/icons/wind.gif">
+                    <p class="title-text-box">Wind</p>
+                </div>
+                <div class="content-box">
+                    <p class="content-text"><?php echo $wind_speed ?> km/h</p>
+                </div>
             </div>
             <!-- humidity box -->
             <div class="humidity-box shadow p-3 mb-5 bg-white rounded">
@@ -181,14 +190,34 @@ $city = $current["location"]["region"];
             </div>
             <!-- forecast box -->
             <div class="forecast-box shadow p-3 mb-5 bg-white rounded">
-                e
+                <div class="w3-bar w3-black">
+                    <button class="w3-bar-item w3-button button-switcher" onclick="openTab('Today')">Today</button>
+                    <button class="w3-bar-item w3-button button-switcher" onclick="openTab('Tomorrow')">Tomorrow</button>
+                    <button class="button-switcher" onclick="openTab('10 Days')">10 Days</button>
+                </div>
+                <div id="Today" class="w3-container city">
+                    <div class="laiks1 weather-box">
+                        <h2 class="time">Day</h2>
+                        <p class="temperature"></p>
+                    </div>
+                    <div class="laiks1 weather-box">
+                        <h2 class="time">Night</h2>
+                        <p class="temperature"></p>
+                    </div>
+                </div>
+
+                <div id="Tomorrow" class="w3-container city " style="display:none">
+                    <div class="laiks1">
+                        <h2>London2</h2>
+                        <p>London is the capital city of England.</p>
+                    </div>
             </div>
-        </div>
     </content>
 </body>
 <script src="src/js/live.js"></script>
 <script src="src/js/onenter.js"></script>
 <script src="src/js/getdata.js"></script>
+<script src="src/js/tabs.js"></script>
 <script>
     // execute on load lol (default to Riga)
     getData();

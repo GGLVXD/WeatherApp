@@ -18,7 +18,7 @@
 /* hamburger, logo, city stuff */
 .logo-container {
     display: flex;
-    width: 42%; /* size of logo and city stuff */
+    width: 30%; /* size of logo and city stuff */
     align-items: center;
     height: 100%;
 }
@@ -34,6 +34,7 @@
     margin-top: 0;
     color: #3B82F6;
     font-size: 24px;
+    font-family: "Segoe UI", Arial, sans-serif;
 }
 
 /* logo + hamburger */
@@ -72,6 +73,7 @@
     display: flex;
     width: 35%;
     align-items: center;
+    margin-left: 70px;
 
 }
 
