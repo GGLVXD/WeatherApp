@@ -1,11 +1,20 @@
 <?php
-include 'src/php/data.php';
 include 'src/php/country.php';
+include 'src/php/getData.php';
 function countryCodeToName($countrycode, $countryarray) {
   return $countryarray[$countrycode];
 }
 
-$cityName= $forecast["city"]["name"];
+$localtime = $current["location"]["localtime_epoch"]; // localtime in unix
+$temp = $current["current"]["temp_c"];
+$feelslike = $current["current"]["feelslike_c"]; // feels like temp
+$currenticon = $current["current"]["condition"]["icon"]; // icon for the current weather
+$wind_direction = $current["current"]["wind_dir"];
+
+$country = $current["location"]["country"];
+$city = $current["location"]["region"];
+//$cityName= $forecast["city"]["name"];
+
 
 ?>
 <!DOCTYPE html>
@@ -55,7 +64,7 @@ $cityName= $forecast["city"]["name"];
                     <!-- that maps icon -->
                     <img src="assets/icons/google-maps.gif" alt="worldwide" width="25px" height="25px"> 
                     <!-- location text -->
-                    <p class="location-text"><?php echo $cityName; echo ", "; echo countryCodeToName($forecast["city"]["country"], $country)?></p>
+                    <p class="location-text"><?php echo $city; echo ", "; echo $country; ?></p>
                 </div>
             </div>
             <!-- search box + theme switcher -->
@@ -95,7 +104,15 @@ $cityName= $forecast["city"]["name"];
                     <p class="current-weather-text">Current Weather</p>
                 </div>
                 <div class="localtime-box">
-                    <h2>Local time: <h2 id="localtime"></h2></h2>
+                    <p>Local time: <?php echo date('H:i A', $localtime);?></p>
+                </div>
+                <div class="weather-overcast">
+                    <img src="http:<?php echo $currenticon?>">
+                    <p class="weather-text"><?php echo $temp ?>°C</p>
+                    <p>Overcast<br>Feels Like <?php echo $feelslike ?>°C</p>
+                </div>
+                <div class="wind-direction"> 
+                    <p>Current wind direction: <?php echo $wind_direction ?></p>
                 </div>
             </div>
             <!-- current airquality box -->

@@ -3,3 +3,28 @@
     margin-left: 20px;
     margin-top: 20px;
 }
+/* current time from location */
+.localtime-box {
+    font-size: 20px;
+    font-weight: bold;
+
+    margin-left: 20px;
+    margin-top: -15px;
+}
+/* current weather in celsius and overcast */
+.weather-overcast {
+    height: 50px;
+    margin-top: -10px;
+    display: flex;
+    margin-left: 20px; /* space for icon */
+    gap: 15px;
+}
+/* current weather text */
+.weather-text {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.wind-direction {
+    margin-left: 20px;
+}
