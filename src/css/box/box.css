@@ -1,0 +1,27 @@
+/* title in the box */
+.title-box{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* icon in the mini boxes */
+.box-icon {
+    width: 20px;
+    height: 30px;
+}
+
+/* the title text in the minibox */
+.title-text-box {
+    margin: 0;
+}
+
+.content-box {
+    display: flex;
+    margin-left: 25px;
+}
+
+.content-text {
+    font-weight: 600;
+    font-size: 25px;
+}

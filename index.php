@@ -10,6 +10,10 @@ $temp = $current["current"]["temp_c"];
 $feelslike = $current["current"]["feelslike_c"]; // feels like temp
 $currenticon = $current["current"]["condition"]["icon"]; // icon for the current weather
 $wind_direction = $current["current"]["wind_dir"];
+$humidity = $current["current"]["humidity"];
+$visibility = $current["current"]["vis_km"];
+$pressure_in = $current["current"]["pressure_in"];
+$pressure_mb = $current["current"]["pressure_mb"];
 
 $country = $current["location"]["country"];
 $city = $current["location"]["region"];
@@ -40,6 +44,8 @@ $city = $current["location"]["region"];
     <link rel="stylesheet" href="src/css/content.css">
     <!-- current weather -->
     <link rel="stylesheet" href="src/css/box/current.css">
+    <!-- global box things -->
+    <link rel="stylesheet" href="src/css/box/box.css">
 </head>
 <body>
     <!-- header -->
@@ -117,7 +123,13 @@ $city = $current["location"]["region"];
             </div>
             <!-- current airquality box -->
             <div class="airquality-box shadow p-3 mb-5 bg-white rounded">
-                e
+                <div class="title-box">
+                    <img class="box-icon" src="assets/icons/clouds.gif">
+                    <p class="title-text-box">Air Quality</p>
+                </div>
+                <div class="content-box">
+                    <p><?php echo $humidity ?></p>
+                </div>
             </div>
             <!-- wind box -->
             <div class="wind-box shadow p-3 mb-5 bg-white rounded">
@@ -125,19 +137,43 @@ $city = $current["location"]["region"];
             </div>
             <!-- humidity box -->
             <div class="humidity-box shadow p-3 mb-5 bg-white rounded">
-                e
+                <div class="title-box">
+                    <img class="box-icon" src="assets/icons/humidity.gif">
+                    <p class="title-text-box">Humidity</p>
+                </div>
+                <div class="content-box">
+                    <p class="content-text"><?php echo $humidity ?>%</p>
+                </div>
             </div>
             <!-- visibiliy box -->
             <div class="visibility-box shadow p-3 mb-5 bg-white rounded">
-                e
+                <div class="title-box">
+                    <img class="box-icon" src="assets/icons/vision.gif">
+                    <p class="title-text-box">Visibility</p>
+                </div>
+                <div class="content-box">
+                    <p class="content-text"><?php echo $visibility ?>km</p>
+                </div>
             </div>
-            <!-- pressure box -->
+            <!-- pressure in box -->
             <div class="pressure-box shadow p-3 mb-5 bg-white rounded">
-                e
+                <div class="title-box">
+                    <img class="box-icon" src="assets/icons/air-pump.gif">
+                    <p class="title-text-box">Pressure</p>
+                </div>
+                <div class="content-box">
+                    <p class="content-text"><?php echo $pressure_in ?> in</p>
+                </div>
             </div>
             <!-- pressure another box -->
             <div class="pressure2-box shadow p-3 mb-5 bg-white rounded">
-                e
+                <div class="title-box">
+                    <img class="box-icon" src="assets/icons/air-pump.gif">
+                    <p class="title-text-box">Pressure</p>
+                </div>
+                <div class="content-box">
+                    <p class="content-text"><?php echo $pressure_mb ?>°</p>
+                </div>
             </div>
             <!-- summary box -->
             <div class="summary-box shadow p-3 mb-5 bg-white rounded">
