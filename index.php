@@ -25,6 +25,9 @@ $city = $current["location"]["region"];
 $sunrise = $astronomy["astronomy"]["astro"]["sunrise"];
 $sunset = $astronomy["astronomy"]["astro"]["sunset"];
 
+$moonrise = $astronomy["astronomy"]["astro"]["moonrise"];
+$moonset = $astronomy["astronomy"]["astro"]["moonset"];
+
 
 // forcast
 
@@ -51,6 +54,7 @@ $twoamDescription = $forecast["forecast"]["forecastday"][0]["hour"][2]["conditio
 $twoamTemperature = $forecast["forecast"]["forecastday"][0]["hour"][2]["temp_c"];
 $twoamWind = $forecast["forecast"]["forecastday"][0]["hour"][2]["wind_kph"];
 $twoamHumidity = $forecast["forecast"]["forecastday"][0]["hour"][2]["humidity"];
+
 
 
 ?>
@@ -271,13 +275,24 @@ $twoamHumidity = $forecast["forecast"]["forecastday"][0]["hour"][2]["humidity"];
             <div class="moonrise-container">
                 <div class="moonrise-container">
                     <div class="moonrise-image-container">
-                        <img class="moonrise-icon-image" src="assets/icons/moonrise.gif" alt="moonrise icon">
+                        <img class="moonrise-icon-image" src="assets/icons/moon-rise.gif" alt="moonrise icon">
                     </div>
                     <div class="moonrise-text-container">
-                        <p class="moonrise">moonrise</p>
+                        <p class="moonrise">Moonrise</p>
                     </div>
                     <div class="moonrise-var-container">
-                        <p class="moonrise-var">nav</p>
+                        <p class="moonrise-var"><?php echo $moonrise ?></p>
+                    </div>
+                </div>
+                <div class="moonset-container">
+                    <div class="moonset-image-container">
+                        <img class="moonrise-icon-image" src="assets/icons/moon-set.gif" alt="moonset icon">
+                    </div>
+                    <div class="moonset-text-container">
+                        <p class="moonrise">Moonset</p>
+                    </div>
+                    <div class="moonset-var-container">
+                        <p class="moonrise-var"><?php echo $moonset ?></p>
                     </div>
                 </div>
             </div>

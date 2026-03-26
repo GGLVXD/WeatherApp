@@ -74,5 +74,19 @@
 
 
 .moonrise-container{
-    margin-left: 100px;
+    margin-left: 135px;
+}
+
+.moonrise-icon-image{
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+}
+
+.moonset-text-container{
+    line-height: 0;
+}
+
+.moonset-container {
+    margin-left: auto;
 }
