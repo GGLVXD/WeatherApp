@@ -29,6 +29,8 @@ $cityName= $forecast["city"]["name"];
     <link rel="stylesheet" href="src/css/header.css">
     <!-- content -->
     <link rel="stylesheet" href="src/css/content.css">
+    <!-- current weather -->
+    <link rel="stylesheet" href="src/css/box/current.css">
 </head>
 <body>
     <!-- header -->
@@ -61,10 +63,12 @@ $cityName= $forecast["city"]["name"];
                 <!-- search box container -->
                 <div class="search-container my-2 my-lg-0">
                     <i class="fas fa-search search-icon"></i>
-                    <input type="text" class="search-input" placeholder="Search Location">
+                    <input id="searchInput" type="text" class="search-input" placeholder="Search Location">
                     <!-- worldwide icon -->
                     <div class="worldwide-icon">
-                        <img src="assets/icons/worldwide.gif" alt="worldwide">
+                        <button id="button" onclick="getData()" class="worldwide-button">
+                            <img src="assets/icons/worldwide.gif" alt="worldwide">
+                        </button>
                     </div>
                 </div>
                 <div class="theme-switcher-container">
@@ -86,41 +90,54 @@ $cityName= $forecast["city"]["name"];
         <!-- main content section -->
         <div class="content-container">
             <!-- current weather box -->
-            <div class="current-box">
-                e
+            <div class="current-box shadow p-3 mb-5 bg-white rounded">
+                <div class="current-weather-text-box">
+                    <p class="current-weather-text">Current Weather</p>
+                </div>
+                <div class="localtime-box">
+                    <h2>Local time: <h2 id="localtime"></h2></h2>
+                </div>
             </div>
             <!-- current airquality box -->
-            <div class="airquality-box">
+            <div class="airquality-box shadow p-3 mb-5 bg-white rounded">
                 e
             </div>
             <!-- wind box -->
-            <div class="wind-box">
+            <div class="wind-box shadow p-3 mb-5 bg-white rounded">
                 e
             </div>
             <!-- humidity box -->
-            <div class="humidity-box">
+            <div class="humidity-box shadow p-3 mb-5 bg-white rounded">
                 e
             </div>
             <!-- visibiliy box -->
-            <div class="visibility-box">
+            <div class="visibility-box shadow p-3 mb-5 bg-white rounded">
                 e
             </div>
             <!-- pressure box -->
-            <div class="pressure-box">
+            <div class="pressure-box shadow p-3 mb-5 bg-white rounded">
                 e
             </div>
             <!-- pressure another box -->
-            <div class="pressure2-box">
+            <div class="pressure2-box shadow p-3 mb-5 bg-white rounded">
                 e
             </div>
             <!-- summary box -->
-            <div class="summary-box">
+            <div class="summary-box shadow p-3 mb-5 bg-white rounded">
                 e
             </div>
             <!-- forecast box -->
-            <div class="forecast-box">
+            <div class="forecast-box shadow p-3 mb-5 bg-white rounded">
                 e
             </div>
         </div>
     </content>
 </body>
+<script src="src/js/live.js"></script>
+<script src="src/js/onenter.js"></script>
+<script src="src/js/getdata.js"></script>
+<script>
+    // execute on load lol (default to Riga)
+    getData();
+</script>
+</html>

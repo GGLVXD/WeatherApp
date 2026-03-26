@@ -130,6 +130,11 @@
     height: 24px;
 }
 
+/* button at worldwide icon at search */
+.worldwide-button {
+    border: none;
+}
+
 /* theme switcher container */
 .theme-switcher-container{
     display: flex;
